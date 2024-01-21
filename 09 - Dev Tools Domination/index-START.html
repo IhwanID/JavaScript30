@@ -6,8 +6,8 @@
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body>
-
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
+  
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
@@ -19,28 +19,58 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log("Hello I am %s", 'Ihwan');
 
     // Styled
+    console.log('%c Tulisan gede banget', 'font-size:50px; background:red');
 
     // warning!
-
+    console.warn('Oh Tidak!');
     // Error :|
-
+    console.error('Kesalahan pada user!');
+    
     // Info
+    console.info('fyi aja nih');
 
     // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'Error nih!');
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+
+    console.clear();
 
     // Grouping together
+    dogs.forEach( dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} y.o`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    console.table(dogs);
 
     // counting
+    console.count('Ihwan');
+    console.count('Ihwan');
+    console.count('Ihwan');
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/ihwanid')
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd('fetching data');
+      console.log(data);
+    });
 
   </script>
 </body>
